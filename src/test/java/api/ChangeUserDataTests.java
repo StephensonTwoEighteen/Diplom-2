@@ -7,7 +7,7 @@ import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Test;
 import ru.yandex.praktikum.http.UserClient;
-import ru.yandex.praktikum.httpModel.User;
+import ru.yandex.praktikum.http.model.User;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -44,9 +44,9 @@ public class ChangeUserDataTests {
         ValidatableResponse responseEdit = userClient.changeAuthUserData(userWithNewData, createdUser.getAccessToken());
         String editBody = responseEdit.extract().body().asPrettyString();
 
-        //assertThat("\"Код ответа не соответствует 200\"", responseEdit.extract().statusCode(), equalTo(200));
-        //assertThat("\"Error: Что-то пошло не так\"", editBody, containsString("\"success\": true,\n" +
-        //        "    \"user\":"));
+        assertThat("\"Код ответа не соответствует 200\"", responseEdit.extract().statusCode(), equalTo(200));
+        assertThat("\"Error: Что-то пошло не так\"", editBody, containsString("\"success\": true,\n" +
+                "    \"user\":"));
     }
 
     @Test

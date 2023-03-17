@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.httpModel;
+package ru.yandex.praktikum.http.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,9 +12,10 @@ public class Order {
         this.ingredients = ingredients;
     }
 
-    public Order(){}
+    public Order() {
+    }
 
-    public static Order addIngredients(){
+    public static Order addIngredients() {
         return new Order(
                 new ArrayList<>(Arrays.asList("61c0c5a71d1f82001bdaaa6e", "61c0c5a71d1f82001bdaaa6c"))
         );

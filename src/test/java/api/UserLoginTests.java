@@ -6,7 +6,7 @@ import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Test;
 import ru.yandex.praktikum.http.UserClient;
-import ru.yandex.praktikum.httpModel.User;
+import ru.yandex.praktikum.http.model.User;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;

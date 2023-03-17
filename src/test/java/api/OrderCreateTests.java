@@ -8,8 +8,8 @@ import org.junit.After;
 import org.junit.Test;
 import ru.yandex.praktikum.http.OrderClient;
 import ru.yandex.praktikum.http.UserClient;
-import ru.yandex.praktikum.httpModel.Order;
-import ru.yandex.praktikum.httpModel.User;
+import ru.yandex.praktikum.http.model.Order;
+import ru.yandex.praktikum.http.model.User;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.httpModel;
+package ru.yandex.praktikum.http.model;
 
 public class User {
     private String email;

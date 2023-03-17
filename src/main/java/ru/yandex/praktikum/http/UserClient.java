@@ -2,11 +2,11 @@ package ru.yandex.praktikum.http;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
-import ru.yandex.praktikum.httpModel.User;
+import ru.yandex.praktikum.http.model.User;
 
 import static io.restassured.RestAssured.given;
 
-public class UserClient extends StellarClient{
+public class UserClient extends StellarClient {
 
     public final String CREATE_USER = "/api/auth/register";
     public final String LOGIN_USER = "/api/auth/login";
@@ -22,7 +22,7 @@ public class UserClient extends StellarClient{
     }
 
     @Step("Логин юзера")
-    public ValidatableResponse loginUser(User user){
+    public ValidatableResponse loginUser(User user) {
         return given().spec(baseSpec())
                 .body(user)
                 .when()
@@ -31,7 +31,7 @@ public class UserClient extends StellarClient{
     }
 
     @Step("Изменение данных авторизованного юзера")
-    public ValidatableResponse changeAuthUserData(User user, String accessToken){
+    public ValidatableResponse changeAuthUserData(User user, String accessToken) {
         return given().spec(baseSpec())
                 .header("Authorization", accessToken)
                 .body(user)
@@ -41,7 +41,7 @@ public class UserClient extends StellarClient{
     }
 
     @Step("Изменение данных неавторизованного юзера")
-    public ValidatableResponse changeNotAuthUserData(User user){
+    public ValidatableResponse changeNotAuthUserData(User user) {
         return given().spec(baseSpec())
                 .body(user)
                 .when()
@@ -50,7 +50,7 @@ public class UserClient extends StellarClient{
     }
 
     @Step("Удаление юзера")
-    public ValidatableResponse deleteUser(String accessToken){
+    public ValidatableResponse deleteUser(String accessToken) {
         return given().spec(baseSpec())
                 .header("Authorization", accessToken)
                 .when()
