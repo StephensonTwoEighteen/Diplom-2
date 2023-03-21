@@ -14,8 +14,8 @@ import ru.yandex.praktikum.http.model.User;
 import java.util.Arrays;
 
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class OrderCreateTests {
     private Gson gson = new Gson();

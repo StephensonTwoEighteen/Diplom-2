@@ -1,8 +1,8 @@
 package ru.yandex.praktikum.http.model;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Order {
 

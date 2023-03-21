@@ -12,7 +12,6 @@ import ru.yandex.praktikum.http.model.User;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 public class ChangeUserDataTests {

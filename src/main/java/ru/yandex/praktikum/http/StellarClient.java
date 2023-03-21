@@ -1,8 +1,8 @@
 package ru.yandex.praktikum.http;
 
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.http.ContentType;
 
 public class StellarClient {
     private final String BASE_URL = "https://stellarburgers.nomoreparties.site";

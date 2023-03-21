@@ -9,8 +9,8 @@ import ru.yandex.praktikum.http.UserClient;
 import ru.yandex.praktikum.http.model.User;
 
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class UserCreateTests {
     private Gson gson = new Gson();
