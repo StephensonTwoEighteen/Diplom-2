@@ -1,6 +1,7 @@
 package ru.yandex.praktikum.http;
 
 import io.qameta.allure.Step;
+import io.restassured.response.ValidatableResponse;
 import ru.yandex.praktikum.http.model.Order;
 
 import static io.restassured.RestAssured.given;
@@ -10,7 +11,7 @@ public class OrderClient extends StellarClient {
     public final String CREATE_ORDER = "/api/orders";
 
     @Step("Создание заказа авторизованным пользователем с ингредиентами")
-    public io.restassured.response.ValidatableResponse createOrderByAuthUserWithIngredient(Order ingredients, String accessToken) {
+    public ValidatableResponse createOrderByAuthUserWithIngredient(Order ingredients, String accessToken) {
         return given().spec(baseSpec())
                 .header("Authorization", accessToken)
                 .body(ingredients)
@@ -20,7 +21,7 @@ public class OrderClient extends StellarClient {
     }
 
     @Step("Создание заказа неавторизованным пользователем с ингредиентами")
-    public io.restassured.response.ValidatableResponse createOrderByNotAuthUserWithIngredients(Order order) {
+    public ValidatableResponse createOrderByNotAuthUserWithIngredients(Order order) {
         return given().spec(baseSpec())
                 .body(order)
                 .when()
@@ -29,7 +30,7 @@ public class OrderClient extends StellarClient {
     }
 
     @Step("Создание заказа авторизованным пользователем без ингредиентов")
-    public io.restassured.response.ValidatableResponse createOrderByAuthUserWithoutIngredients(String accessToken) {
+    public ValidatableResponse createOrderByAuthUserWithoutIngredients(String accessToken) {
         return given().spec(baseSpec())
                 .header("Authorization", accessToken)
                 .when()
@@ -38,7 +39,7 @@ public class OrderClient extends StellarClient {
     }
 
     @Step("Создание заказа авторизованным пользователем с неверным хешем ингредиентов")
-    public io.restassured.response.ValidatableResponse createOrderByAuthUserWithWrongIngredients(Order order, String accessToken) {
+    public ValidatableResponse createOrderByAuthUserWithWrongIngredients(Order order, String accessToken) {
         return given().spec(baseSpec())
                 .header("Authorization", accessToken)
                 .body(order)
@@ -48,7 +49,7 @@ public class OrderClient extends StellarClient {
     }
 
     @Step("Получение заказов авторизованного пользователя")
-    public io.restassured.response.ValidatableResponse getUserOrdersWithAuth(String accessToken) {
+    public ValidatableResponse getUserOrdersWithAuth(String accessToken) {
         return given().spec(baseSpec())
                 .header("Authorization", accessToken)
                 .when()
@@ -57,7 +58,7 @@ public class OrderClient extends StellarClient {
     }
 
     @Step("Получение заказов неавторизованного пользователя")
-    public io.restassured.response.ValidatableResponse getUserOrdersWithoutAuth() {
+    public ValidatableResponse getUserOrdersWithoutAuth() {
         return given().spec(baseSpec())
                 .when()
                 .get(CREATE_ORDER)
